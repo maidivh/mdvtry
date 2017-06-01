@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Molde\Plan;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -22,5 +23,27 @@ class StaticPagesController extends Controller
     public function about()
     {
         return view('static_pages/about');
+    }
+
+
+
+
+
+
+    public function index(){
+        return view('demo.index');
+    }
+
+    public function plan(){
+
+        $plan = Plan::all();
+        var_dump($plan);
+
+        return view('demo.index');
+    }
+
+    public function demoPost($o,$c){
+
+        dd($c);
     }
 }

@@ -34,14 +34,16 @@ class Authenticate
      */
     public function handle($request, Closure $next)
     {
+        // 如果是游客
         if ($this->auth->guest()) {
+            // 如果是 Ajax 请求
             if ($request->ajax()) {
                 return response('Unauthorized.', 401);
             } else {
                 return redirect()->guest('auth/login');
             }
         }
-
+         // 将请求导向下一个中间件，如果后面没有中间件，就会到的处理逻辑（比如控制器等）。
         return $next($request);
     }
 }
