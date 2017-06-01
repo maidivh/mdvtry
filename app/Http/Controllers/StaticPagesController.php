@@ -26,24 +26,19 @@ class StaticPagesController extends Controller
     }
 
 
-
-
-
-
-    public function index(){
+    public function index()
+    {
         return view('demo.index');
     }
 
-    public function plan(){
-
-        $plan = Plan::all();
-        var_dump($plan);
+    public function plan()
+    {
 
         return view('demo.index');
     }
 
-    public function demoPost($o,$c){
-
+    public function demoPost($o, $c)
+    {
         dd($c);
     }
 }
