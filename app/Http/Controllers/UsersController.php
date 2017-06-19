@@ -40,8 +40,11 @@ class UsersController extends Controller
             'email' =>$request->email
         ]);
 
+        Auth::login($user); // 注册成功后自动登录
         session()->flash('success','欢迎来的Mdvtrw，您将在这里开启一段新的旅程～');
         // 注册成功称定向到个人页面,加载用户数据
         return redirect()->route('users.show',[$user]);
     }
+
+    //
 }

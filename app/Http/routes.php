@@ -4,10 +4,10 @@
 
 Route::get('/', 'StaticPagesController@home');
 
-Route::get('/help', 'StaticPagesController@help');
+Route::get('/help', 'StaticPagesController@help')->name('help');
 Route::get('/about', 'StaticPagesController@about');
 
-Route::get('/signup','UsersController@create')->name('users.create');
+Route::get('/signup','UsersController@create')->name('signup');
 
 Route::resource('users','UsersController');
 
@@ -22,3 +22,13 @@ Route::get('/users/{user}/edit', 'UsersController@edit')->name('users.edit');
 Route::patch('/users/{user}', 'UsersController@update')->name('users.update');
 Route::delete('/users/{user}', 'UsersController@destroy')->name('users.destroy');
 */
+
+// 加载登录页面
+Route::get('login',function (){
+return view('sessions.create');
+
+})->name('login');
+
+Route::post('login','SessionsController@store')->name('login');
+
+Route::delete('logout','SessionsController@destroy')->name('logout');

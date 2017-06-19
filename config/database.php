@@ -29,8 +29,9 @@ return [
     | you may use many connections at once using the Database library.
     |
     */
-
-    'default' => env('DB_CONNECTION', 'mysql'),
+    // 默认不再是mysql了
+    // 'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => $db_config['connetion'],
 
     /*
     |--------------------------------------------------------------------------
@@ -78,15 +79,15 @@ return [
             'prefix'   => '',
             'schema'   => 'public',
         ],*/
-        'pgsql' =>[
-            'driver'=>'pgsql',
-            'host'=>$db_config['host'],
-            'database'=>$db_config['database'],
-            'username'=>$db_config['username'],
-            'password'=>$db_config['password'],
-            'charset'=>'utf8',
-            'prefix'=>'',
-            'schema'=>'public',
+        'pgsql' => [
+            'driver'   => 'pgsql',
+            'host'     => $db_config['host'],
+            'database' => $db_config['database'],
+            'username' => $db_config['username'],
+            'password' => $db_config['password'],
+            'charset'  => 'utf8',
+            'prefix'   => '',
+            'schema'   => 'public',
         ],
 
         'sqlsrv' => [

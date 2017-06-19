@@ -19,6 +19,7 @@ require __DIR__.'/../vendor/autoload.php';
 // 加载数据库 切换配置
 require __DIR__.'/helpers.php';
 
+
 /*
 |--------------------------------------------------------------------------
 | Include The Compiled Class File
