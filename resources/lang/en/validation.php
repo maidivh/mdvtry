@@ -79,13 +79,11 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Custom Validation Language Lines
+    |
+    | 自定义验证语言行
     |--------------------------------------------------------------------------
-    |
-    | Here you may specify custom validation messages for attributes using the
-    | convention "attribute.rule" to name the lines. This makes it quick to
-    | specify a specific custom language line for a given attribute rule.
-    |
+    | 在这里，您可以使用约定“attribute.rule”来指定属性的自定义验证消息。
+    | 这样可以快速为给定的属性规则指定特定的自定义语言行。
     */
 
     'custom' => [
@@ -93,6 +91,14 @@ return [
             'rule-name' => 'custom-message',
         ],
     ],
+
+    /*
+     * 例子：
+     'custom' => [
+        'email' => [
+            'required' => '邮箱地址不能为空！',
+        ],
+    ],*/
 
     /*
     |--------------------------------------------------------------------------
