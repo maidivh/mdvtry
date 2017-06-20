@@ -16,8 +16,8 @@ class User extends Model implements AuthenticatableContract,
 {
     use Authenticatable, Authorizable, CanResetPassword;
 
-    // 制定数据表名称
-    protected $table = 'users';
+    // 指定数据表名称
+   // protected $table = 'users';
 
     // 可以被操作的属性
     protected $fillable = ['name', 'email', 'password'];

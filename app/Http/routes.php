@@ -24,10 +24,7 @@ Route::delete('/users/{user}', 'UsersController@destroy')->name('users.destroy')
 */
 
 // 加载登录页面
-Route::get('login',function (){
-return view('sessions.create');
-
-})->name('login');
+Route::get('login','SessionsController@create')->name('login');
 
 Route::post('login','SessionsController@store')->name('login');
 

@@ -34,8 +34,9 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next)
     {
+        // 如果用户已经登录了,在不能去注册或者登录界面的动作请求
         if ($this->auth->check()) {
-            return redirect('/');
+            return redirect()->back();
         }
 
         return $next($request);

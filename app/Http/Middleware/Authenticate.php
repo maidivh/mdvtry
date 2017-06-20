@@ -40,7 +40,7 @@ class Authenticate
             if ($request->ajax()) {
                 return response('Unauthorized.', 401);
             } else {
-                return redirect()->guest('auth/login');
+                return redirect()->guest('login');
             }
         }
          // 将请求导向下一个中间件，如果后面没有中间件，就会到的处理逻辑（比如控制器等）。
